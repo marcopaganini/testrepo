@@ -19,6 +19,6 @@ jobs:
           ls -al
           git clone https://github.com/marcopaganini/testrepo
           cd testrepo
-          echo "Port is: ${{ secrets.PORT }}"
-          echo "Port is: ${{ secrets.PORT }}" | md5sum
+          git-crypt unlock <(echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d)
+          cat crypto/*
 
