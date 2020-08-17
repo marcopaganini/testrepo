@@ -14,9 +14,7 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         script: |
-          pwd
-          whoami
-          ls -al
+          rm -rf testrepo
           git clone https://github.com/marcopaganini/testrepo
           cd testrepo
           git-crypt unlock <(echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d)
