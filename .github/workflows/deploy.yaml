@@ -13,4 +13,9 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        script: git clone https://github.com/marcopaganini/testrepo
+        script: |
+          pwd
+          whoami
+          ls -al
+          git clone https://github.com/marcopaganini/testrepo
+          ls -al
