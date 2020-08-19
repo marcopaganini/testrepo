@@ -1,5 +1,8 @@
 name: Remote deployment
-on: [push]
+on:
+  push:
+    tags:
+      - release.*
 jobs:
   build:
     name: Build
